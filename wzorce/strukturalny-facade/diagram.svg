@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="420" viewBox="0 0 820 420">
+  <rect width="820" height="420" fill="#ffffff"/>
+  <style>
+    .box{fill:#f8fafc;stroke:#1f2937;stroke-width:2}
+    .facade{fill:#eff6ff;stroke:#1d4ed8;stroke-width:2}
+    .title{font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:700;fill:#111827}
+    .text{font-family:Arial,Helvetica,sans-serif;font-size:14px;fill:#1f2937}
+    .arrow{stroke:#2563eb;stroke-width:2;fill:none;marker-end:url(#arrow)}
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect class="box" x="40" y="150" width="160" height="100" rx="8"/>
+  <text class="title" x="70" y="185">Views</text>
+  <text class="text" x="60" y="214">dashboard()</text>
+  <text class="text" x="60" y="236">parcel_create()</text>
+  <rect class="facade" x="280" y="110" width="250" height="180" rx="8"/>
+  <text class="title" x="305" y="145">ParcelManagementFacade</text>
+  <text class="text" x="305" y="176">+ dashboard()</text>
+  <text class="text" x="305" y="198">+ list_parcels()</text>
+  <text class="text" x="305" y="220">+ send_parcel()</text>
+  <text class="text" x="305" y="242">+ put_in_locker()</text>
+  <rect class="box" x="620" y="50" width="150" height="80" rx="8"/>
+  <text class="title" x="660" y="84">Locker</text>
+  <text class="text" x="640" y="108">free_slots</text>
+  <rect class="box" x="620" y="170" width="150" height="80" rx="8"/>
+  <text class="title" x="660" y="204">Parcel</text>
+  <text class="text" x="640" y="228">status, save()</text>
+  <rect class="box" x="620" y="290" width="150" height="80" rx="8"/>
+  <text class="title" x="655" y="324">Courier</text>
+  <text class="text" x="640" y="348">assigned parcels</text>
+  <path class="arrow" d="M200 200 H275"/>
+  <path class="arrow" d="M530 155 L615 95"/>
+  <path class="arrow" d="M530 200 H615"/>
+  <path class="arrow" d="M530 245 L615 325"/>
+</svg>

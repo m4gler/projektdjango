@@ -1,0 +1,33 @@
+{% load static %}
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paczkomaty</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23111827'/%3E%3Crect x='14' y='16' width='36' height='32' rx='4' fill='%23ffffff'/%3E%3Cpath d='M22 26h20M22 36h20' stroke='%232563eb' stroke-width='4'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="{% static 'paczkomaty/styles.css' %}">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="{% url 'paczkomaty:dashboard' %}">Paczkomaty</a>
+        <nav class="nav">
+            <a href="{% url 'paczkomaty:dashboard' %}">Pulpit</a>
+            <a href="{% url 'paczkomaty:parcel_list' %}">Przesylki</a>
+            <a href="{% url 'paczkomaty:parcel_create' %}">Nadaj</a>
+            <a href="{% url 'paczkomaty:locker_list' %}">Paczkomaty</a>
+        </nav>
+    </header>
+
+    <main class="page">
+        {% if messages %}
+            <section class="messages" aria-label="Komunikaty">
+                {% for message in messages %}
+                    <p class="message {{ message.tags }}">{{ message }}</p>
+                {% endfor %}
+            </section>
+        {% endif %}
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

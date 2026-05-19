@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="360" viewBox="0 0 760 360">
+  <rect width="760" height="360" fill="#ffffff"/>
+  <style>
+    .box{fill:#f8fafc;stroke:#1f2937;stroke-width:2}
+    .title{font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:700;fill:#111827}
+    .text{font-family:Arial,Helvetica,sans-serif;font-size:14px;fill:#1f2937}
+    .arrow{stroke:#2563eb;stroke-width:2;fill:none;marker-end:url(#arrow)}
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect class="box" x="40" y="60" width="210" height="120" rx="8"/>
+  <text class="title" x="60" y="92">ParcelDraft</text>
+  <text class="text" x="60" y="122">sender_name</text>
+  <text class="text" x="60" y="144">recipient_name</text>
+  <text class="text" x="60" y="166">locker, courier</text>
+  <rect class="box" x="300" y="50" width="210" height="150" rx="8"/>
+  <text class="title" x="320" y="82">ParcelFactory</text>
+  <text class="text" x="320" y="112">+ create(draft): Parcel</text>
+  <text class="text" x="320" y="136">- _tracking_number()</text>
+  <text class="text" x="320" y="168">ustawia numer i status</text>
+  <rect class="box" x="560" y="60" width="160" height="120" rx="8"/>
+  <text class="title" x="580" y="92">Parcel</text>
+  <text class="text" x="580" y="122">tracking_number</text>
+  <text class="text" x="580" y="144">status</text>
+  <text class="text" x="580" y="166">locker, courier</text>
+  <path class="arrow" d="M250 120 H295"/>
+  <path class="arrow" d="M510 120 H555"/>
+  <rect class="box" x="250" y="245" width="260" height="70" rx="8"/>
+  <text class="title" x="270" y="276">ParcelManagementFacade</text>
+  <text class="text" x="270" y="300">uzywa fabryki w send_parcel()</text>
+  <path class="arrow" d="M380 245 V205"/>
+</svg>

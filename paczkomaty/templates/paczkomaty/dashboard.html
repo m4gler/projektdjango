@@ -1,0 +1,59 @@
+{% extends "paczkomaty/base.html" %}
+
+{% block content %}
+<section class="hero">
+    <div>
+        <p class="eyebrow">System obslugi przesylek</p>
+        <h1>Zarzadzanie paczkomatami i nadawaniem przesylek</h1>
+        <p class="lead">Kontroluj status przesylek, zajetosc skrytek i przypisania kurierow w jednym miejscu.</p>
+    </div>
+    <a class="button" href="{% url 'paczkomaty:parcel_create' %}">Nadaj przesylke</a>
+</section>
+
+<section class="stats" aria-label="Statystyki">
+    <article>
+        <span>{{ stats.lockers }}</span>
+        <p>Paczkomaty</p>
+    </article>
+    <article>
+        <span>{{ stats.couriers }}</span>
+        <p>Kurierzy</p>
+    </article>
+    <article>
+        <span>{{ stats.parcels }}</span>
+        <p>Przesylki</p>
+    </article>
+    <article>
+        <span>{{ stats.in_lockers }}</span>
+        <p>W paczkomatach</p>
+    </article>
+    <article>
+        <span>{{ stats.delivered }}</span>
+        <p>Dostarczone</p>
+    </article>
+</section>
+
+<section class="panel">
+    <div class="panel-header">
+        <div>
+            <p class="eyebrow">Ostatnia aktywnosc</p>
+            <h2>Najnowsze przesylki</h2>
+        </div>
+        <a class="text-link" href="{% url 'paczkomaty:parcel_list' %}">Zobacz wszystkie</a>
+    </div>
+
+    <div class="activity-list">
+        {% for parcel in stats.recent_parcels %}
+            <article class="activity-item">
+                <div>
+                    <strong>{{ parcel.tracking_number }}</strong>
+                    <p>{{ parcel.recipient_name }} - {{ parcel.locker.code }}</p>
+                </div>
+                <span class="status status-{{ parcel.status }}">{{ parcel.get_status_display }}</span>
+            </article>
+        {% empty %}
+            <p class="empty-state">Brak przesylek do wyswietlenia.</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "paczkomaty/base.html" %}
+
+{% block content %}
+<section class="section-header">
+    <div>
+        <p class="eyebrow">Punkty odbioru</p>
+        <h1>Paczkomaty</h1>
+    </div>
+</section>
+
+<section class="locker-grid">
+    {% for locker in lockers %}
+        <article class="locker-card">
+            <div class="locker-top">
+                <h2>{{ locker.code }}</h2>
+                <span>{{ locker.city }}</span>
+            </div>
+            <p>{{ locker.address }}</p>
+            <meter min="0" max="{{ locker.capacity }}" value="{{ locker.occupied_slots }}"></meter>
+            <div class="locker-slots">
+                <strong>{{ locker.free_slots }}</strong>
+                <span>wolnych skrytek z {{ locker.capacity }}</span>
+            </div>
+        </article>
+    {% empty %}
+        <p>Brak paczkomatow.</p>
+    {% endfor %}
+</section>
+{% endblock %}

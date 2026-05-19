@@ -1,0 +1,29 @@
+{% extends "paczkomaty/base.html" %}
+
+{% block content %}
+<section class="section-header">
+    <div>
+        <p class="eyebrow">Formularz</p>
+        <h1>Nadanie przesylki</h1>
+    </div>
+</section>
+
+<form class="form-panel" method="post" novalidate>
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+        <div class="form-errors">{{ form.non_field_errors }}</div>
+    {% endif %}
+
+    {% for field in form %}
+        <label>
+            <span>{{ field.label }}</span>
+            {{ field }}
+            {% if field.errors %}
+                <small>{{ field.errors|striptags }}</small>
+            {% endif %}
+        </label>
+    {% endfor %}
+
+    <button class="button" type="submit">Nadaj przesylke</button>
+</form>
+{% endblock %}
