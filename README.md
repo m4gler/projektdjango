@@ -1,8 +1,7 @@
 # Projekt 2026-05-18
-##### Grupa: do uzupelnienia, klasa: do uzupelnienia
+##### Grupa: II, klasa IIIa
 ### Paczkomaty - aplikacja do zarzadzania przesylkami
-* Imie i nazwisko: do uzupelnienia
-* Imie i nazwisko: do uzupelnienia
+Maksymilian Rożek III a
 
 ## Opis
 
